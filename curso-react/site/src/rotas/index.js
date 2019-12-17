@@ -1,7 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 
-import {ContatoIndex} from '../paginas/contato'
+import { ContatoIndex } from '../paginas/contato'
 import { CursoIndex } from '../paginas/curso';
 
 export class Rotas extends React.Component {
