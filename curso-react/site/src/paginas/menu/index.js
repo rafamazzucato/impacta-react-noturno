@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-export class Menu extends React.Component {
+import { connect } from 'react-redux'
+
+class Menu extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,7 +25,15 @@ export class Menu extends React.Component {
                         </li>
                     </ul>
                 </div>
+                {this.props.nome}
             </nav>
         )
     }
 }
+
+const mapStoreToProps = store => ({
+    nome : store.contato.nome
+})
+
+const Conectado = connect(mapStoreToProps, null)(Menu)
+export {Conectado as Menu}
