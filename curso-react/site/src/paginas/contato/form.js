@@ -33,7 +33,13 @@ class ContatoForm extends React.Component {
 
     preAdicionar(evento){
         evento.preventDefault()
-        const {data, nome, email, telefone, assunto , adicionar} = this.props
+        const {
+            data, 
+            nome, 
+            email, 
+            telefone, 
+            assunto , 
+            adicionar} = this.props
         
         adicionar(data, nome, email, telefone, assunto)
     }

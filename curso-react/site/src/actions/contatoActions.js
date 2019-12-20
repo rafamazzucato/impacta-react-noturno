@@ -48,21 +48,21 @@ export const limpar = function(e){
 }
 
 export const adicionar = function(data, nome, email, telefone, assunto){
-    axios.post(URL, {
-        data,
-        nome,
-        email,
-        telefone,
-        assunto
-    })
-    .then(_ =>{
-        alert('Contato enviado!')
-        return {
-            type : 'LIMPAR_FORM'
-        }
-    })
-    .catch(error => {
-        console.log(error)
-        alert('Erro ao salvar contato')
-    })
+    return (dispatch) => {
+        return axios.post(URL, {
+            data,
+            nome,
+            email,
+            telefone,
+            assunto
+        })
+        .then(_ =>{
+            alert('Contato enviado!')
+            dispatch(limpar())
+        })
+        .catch(error => {
+            console.log(error)
+            alert('Erro ao salvar contato')
+        })
+    }
 }
